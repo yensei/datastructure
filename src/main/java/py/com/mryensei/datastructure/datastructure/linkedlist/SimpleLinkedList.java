@@ -39,6 +39,24 @@ public class SimpleLinkedList {
 		return temp.getData();
 	}
 
+	/**
+	 * Busca el Objeto solicitado recorriendo la lista.
+	 * @param data
+	 * @return
+	 */
+	public Node findData(Object data){
+		//recorremos a partir del primer elemento
+		Node temp = firstNode;
+		for (int i = 0; i < this.size ; i++) {
+			if(temp.getData().equals(data)){
+				return temp;
+			}else{
+				temp = temp.getNext();
+			}
+		}
+		return null;
+	}
+	
 	public int getSize() {
 		return size;
 	}
