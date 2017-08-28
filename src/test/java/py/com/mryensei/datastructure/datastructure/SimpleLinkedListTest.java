@@ -51,4 +51,41 @@ public class SimpleLinkedListTest {
 			fail(e.getMessage());
 		}
 	}	
+	
+	@Test
+	public void testFindElementThatExist() {
+		SimpleLinkedList list = new SimpleLinkedList();
+		list.addAsFirst("ABCDE 20");
+		list.addAsFirst("DBVCP 50");
+		list.addAsFirst("CALLE 44");
+		list.addAsFirst("PAGFA 25");
+		list.addAsFirst("OLMAP 75");
+		
+		try {
+			Node node = new Node("CALLE 44");//nodo a buscar
+			Node founded = list.findData(node.getData());//buscamos el mismo dato en el listado
+			Assert.assertTrue(node.getData().equals(founded.getData()));
+		} catch (Exception e) {
+			fail(e.getMessage());
+		}
+	}	
+	
+	
+	@Test
+	public void testFindElementThatNotExist() {
+		SimpleLinkedList list = new SimpleLinkedList();
+		list.addAsFirst("ABCDE 20");
+		list.addAsFirst("DBVCP 50");
+		list.addAsFirst("CALLE 44");
+		list.addAsFirst("PAGFA 25");
+		list.addAsFirst("OLMAP 75");
+		
+		try {
+			Node node = new Node("HAOLE 50");//nodo a buscar
+			Node founded = list.findData(node.getData());//buscamos el mismo dato en el listado
+			Assert.assertNull(founded);
+		} catch (Exception e) {
+			fail(e.getMessage());
+		}
+	}	
 }

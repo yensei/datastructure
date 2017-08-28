@@ -25,5 +25,4 @@ public class Node {
 	public boolean hasNext(){
 		return this.next == null;
 	}
-	
 }
